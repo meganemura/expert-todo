@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2018_03_17_185230) do
     t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_authentication_tokens_on_email", unique: true
     t.index ["token"], name: "index_authentication_tokens_on_token", unique: true
     t.index ["user_id"], name: "index_authentication_tokens_on_user_id"
   end
