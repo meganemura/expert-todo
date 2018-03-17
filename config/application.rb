@@ -28,6 +28,10 @@ module ExpertTodo
     # the framework and any gems in your application.
     config.generators do |generator|
       generator.orm :active_record, primary_key_type: :uuid
+      generator.javascripts false
+      generator.stylesheets false
+      generator.helper false
+      generator.test_framework :rspec, view_specs: false, helper_specs: false
     end
   end
 end
