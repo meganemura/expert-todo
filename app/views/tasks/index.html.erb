@@ -1,0 +1,11 @@
+タスク一覧
+<ul>
+  <%- @tasks.each do |task| %>
+    <li>
+      <%= task.title %>
+      <%= task.due_date %>
+    </li>
+  <%- end %>
+</ul>
+
+<%= link_to 'タスク追加', new_task_path %>
