@@ -1,7 +1,7 @@
 <ul>
 <%- @authentications.each do |auth| %>
   <li>
-    <%= link_to "User (#{auth.user_id})", login_path(x: auth.volatile_token) %>
+    <%= link_to "User (#{auth.email})", login_path(x: auth.volatile_token) %>
   </li>
 <%- end %>
 </ul>
