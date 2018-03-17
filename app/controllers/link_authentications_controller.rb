@@ -1,0 +1,2 @@
+class LinkAuthenticationsController < ApplicationController
+end
