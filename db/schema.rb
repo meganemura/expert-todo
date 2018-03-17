@@ -27,16 +27,6 @@ ActiveRecord::Schema.define(version: 2018_03_17_185230) do
     t.index ["user_id"], name: "index_authentication_tokens_on_user_id"
   end
 
-  create_table "link_authentications", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "user_id"
-    t.string "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.uuid "volatile_token"
-    t.index ["email"], name: "index_link_authentications_on_email", unique: true
-    t.index ["user_id"], name: "index_link_authentications_on_user_id"
-  end
-
   create_table "tasks", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "user_id"
     t.string "title"
@@ -52,6 +42,5 @@ ActiveRecord::Schema.define(version: 2018_03_17_185230) do
   end
 
   add_foreign_key "authentication_tokens", "users"
-  add_foreign_key "link_authentications", "users"
   add_foreign_key "tasks", "users"
 end
