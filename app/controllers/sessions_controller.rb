@@ -1,6 +1,11 @@
 class SessionsController < ApplicationController
   def create
     if link_authentication_params
+      auth = LinkAuthentication.find_by(volatile_token: link_authentication_params[:x])
+      if auth
+        session[:user] = { id: auth.user_id }
+        # TODO: destroy auth
+      end
     end
 
     redirect_to root_path

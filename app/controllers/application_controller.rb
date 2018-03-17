@@ -8,4 +8,12 @@ class ApplicationController < ActionController::Base
   def public_page?
     true
   end
+
+  def current_user
+    user = session[:user]
+    return unless user
+
+    @current_user ||= User.find_by(id: user['id'])
+  end
+  helper_method :current_user
 end
