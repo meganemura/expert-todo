@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   post '/register', to: 'users#create'
 
   # XXX: for debug use
-  get '/authentications', to: 'link_authentications#index'
+  get '/authentications', to: 'authentication_tokens#index'
 end

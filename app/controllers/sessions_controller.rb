@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
   def create
-    if link_authentication_params
-      auth = LinkAuthentication.find_by(volatile_token: link_authentication_params[:x])
+    if authentication_token_params
+      auth = AuthenticationToken.find_by(token: authentication_token_params[:x])
       if auth
         session[:user] = { id: auth.user_id }
 
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
-  def link_authentication_params
+  def authentication_token_params
     params.permit(:x)
   end
 end

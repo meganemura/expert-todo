@@ -1,0 +1,7 @@
+<ul>
+<%- @tokens.each do |auth| %>
+  <li>
+    <%= link_to "User (#{auth.email})", login_path(x: auth.token) %>
+  </li>
+<%- end %>
+</ul>
