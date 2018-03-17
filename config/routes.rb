@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :tasks
   root 'top_pages#index'
   get '/home', to: 'top_pages#index'
   get '/me', to: 'users#show'
