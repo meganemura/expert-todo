@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#create'
   get '/register', to: 'users#new'
   post '/register', to: 'users#create'
+
+  # XXX: for debug use
+  get '/authentications', to: 'link_authentications#index'
 end
