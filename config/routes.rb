@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :tasks
+  resources :tasks, only: %i(index edit update create destroy)
   root 'top_pages#index'
   get '/home', to: 'top_pages#index'
   get '/me', to: 'users#show'
