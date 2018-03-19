@@ -5,12 +5,8 @@ class UsersController < ApplicationController
   def create
     user = User.new
     user.build_authentication_token(email: user_params[:email])
-    if user.save
-      session[:user] = { id: user.id }
-      redirect_to me_path
-    else
-      redirect_to root_path
-    end
+    user.save
+    redirect_to root_path
   end
 
   def show
