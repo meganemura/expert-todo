@@ -12,6 +12,13 @@
   </head>
 
   <body>
+    <%= render partial: 'layouts/navigation' %>
+    <section class="section">
+    <div class="container">
+    <div class="content has-text-centered">
     <%= yield %>
+    </div>
+    </div>
+    </section>
   </body>
 </html>
