@@ -1,0 +1,13 @@
+タスク一覧
+<ul>
+  <%- @tasks.each do |task| %>
+    <li>
+      <%= task.title %>
+      <%= task.due_date %>
+      <%= link_to '編集', edit_task_path(task.id) %>
+      <%= link_to '削除', task_path(task.id), method: :delete %>
+    </li>
+  <%- end %>
+</ul>
+
+<%= render partial: 'tasks/form', locals: { task: @task } %>

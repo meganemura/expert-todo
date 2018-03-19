@@ -1,0 +1,5 @@
+ユーザ作成
+<%= form_with(url: register_path, method: :post, local: true) do |f| %>
+  <%= f.text_field :email %>
+  <%= f.submit %>
+<% end %>
