@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount LetterOpenerWeb::Engine, at: '/letter_opener'
+
   resources :tasks, only: %i(index edit update create destroy)
   root 'top_pages#index'
   get '/home', to: 'top_pages#index'
